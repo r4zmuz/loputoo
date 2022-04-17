@@ -1,0 +1,171 @@
+//alustan lisades muutujad
+$content-width: 1000px;
+$breakpoint: 830px;
+$nav-height: 70px;
+$nav-background: #08afcc28;
+$nav-font-color: #ffffff;
+$link-hover-color: #2581dc;
+
+nav {
+    float: right; // navbar elemendid joondan paremale
+    margin-right: 2em; //hilisema korrigeerimise kaigus lisatud
+    ul {
+        list-style: none; // eemaldan list elemendi tarnid
+        margin: 0;
+        padding: 0;
+      li {
+        float: left; //joondan list elemendid oma kujutletava kasti sees vasakule
+        position: relative; //eemaldan navbar normaalsest flow'sd, hiljemlisan z indexi et dropdown oleks alati koige peal
+        a {
+            display: block; // teen link elemendid plokkideks
+            padding: 0 20px;
+            line-height: $nav-height; // maaran ploki suuruse ja suuruse votan muutujast
+            color: $nav-font-color; //ploki kirjavarv
+            text-decoration: none;
+            &:hover { //maaran linkide omaduse kui hiirega peale lahen
+                background: $link-hover-color;
+                color: $nav-font-color;
+            }
+            &:not(:only-child):after { //lisan vaikese noole iga lingi child-elemendi jargi (not abil)
+                padding-left: 4px;
+                content: ' ▾'; //unicode kopeeritud nool (#9662) content peab alati olema kui on before voi after
+            }
+        } // Dropdown listi korrigeerimine
+        ul li {
+            min-width: 190px; // annan list elemendile miinimum laiuse, sisumuutuse korral liiga kokku ei pressiks
+            a {
+              padding: 25px; // korrigeerin dropdown kastid uhesuuruseks
+              line-height: 20px;
+          }
+        }
+      }
+    }
+  }
+  .nav-dropdown {
+      position: absolute; //kui eelnev positsioon on lisatud relative, 
+                            //siis see positsioon margitakse absolute 
+                            //aga kaitub nagu relatiivselt
+      z-index: 1; //Dropdown jaab veebilehe contenti suhtes koige peale
+      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15); //annan kastile varju
+      display: none; // hiljem jquery click funktsiooni abiga teen uuesti nahtavaks
+      text-align: left;
+      max-width: 190px;
+      background-color:  #062e35;
+  }
+  .nav-mobile{ //teeme hamburger menuule tausta
+    display:none;
+    position: absolute; //votab absoluut moodud lehe suhtes
+    top: 0;
+    right: 0; // viib paremale ulesse nurka
+    background: $nav-background;
+    height: $nav-height;
+    width: $nav-height; //kasutame nav-height kuna kasti kuju ruut
+    margin: 0;
+  }
+  .navigation {
+    height: $nav-height;
+    background: $nav-background;
+    
+    .nav-container {
+      max-width: $content-width;
+      margin: 0 auto;
+      .brand {
+        position: absolute;
+        padding-left: 20px;
+        float: left;
+        line-height: $nav-height;
+        font-size: 70px;
+        margin: 0;
+        a,
+        a:visited {
+          color: $nav-font-color;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  
+
+  @media only screen and (max-width: $breakpoint){
+    .nav-mobile {
+      display: block; // annab mobiili vaates navbarile block omadused
+                      //kui menuu on avatud ja suurendada ekraani siis pusib muutumatuna block vaade
+      
+    }
+   
+      #nav-toggle {
+        position: absolute;
+        left: 18px;
+        top: 22px;
+        z-index: 1; // tostan X menuu tagant valja
+        cursor: pointer;
+        padding: 10px 35px 16px 0px;
+        span,
+        span:before,
+        span:after {
+          cursor: pointer;
+          border-radius: 1px;
+          height: 5px;
+          width: 35px;
+          background: $nav-font-color; // kasutame sama varvi burger menuul mis font
+          position: absolute;
+          display: block;
+          content: '';
+          transition: all 300ms ease-in-out;
+        }
+        span:before {
+          top: -10px;
+        }
+        span:after {
+          bottom: -10px;
+        }
+        &.active span { //antud punktis loome 'active' klassile, mida veel olemas pole, omadusi, 
+                        //JQuerys kasutan toggle funktsiooni et luua span elemendile klass 'active'
+          background-color: transparent;
+          &:before,
+          &:after { 
+            top: 0;
+          }
+          &:before { // transform lisab animatsiooni muutes burger ikoon X kujuga
+            transform: rotate(45deg);
+          }
+          &:after {
+            transform: rotate(-45deg);
+          }
+        }
+    } 
+      
+    nav { //navbari korrigeerimine mobiili vaates
+      width: 100%;
+      padding: $nav-height 0 15px;
+      margin: 0;
+        ul {
+          display: none;
+          li {
+            float: none;
+            background: $nav-background;
+            a {
+              padding: 15px;
+              line-height: 20px;
+            }
+            ul li a {
+              padding-left: 30px;
+            }
+          }
+        }
+    }
+    .nav-dropdown {
+      position: static; // siis ei lahe teiste asjade peale ega kata asju
+      margin:auto;
+      min-width: 100vw;
+      text-align: center;
+      
+    }
+}
+@media screen and (min-width: $breakpoint) {
+  .nav-list {
+    display: block !important; // peidab ara burgeri menuu bugi mis tekib kui palju
+                                // browseri suurust muuta.
+  }
+}
+  

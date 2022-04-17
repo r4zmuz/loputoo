@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Loputoo</title>
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="sass/main.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,500&display=swap" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="scripts/main.js"></script>
+	
+</head>
+<body>
+    <header>
+		<section class="navigation">
+			<div class="nav-container">
+			  <div class="brand">
+				<a href="#"><i class="fab fa-angrycreative"></i></a>
+			  </div>
+        <nav>
+			<div class="nav-mobile">
+			  <a id="nav-toggle" href="#"><span></span></a>
+			</div>
+			<ul class="nav-list">
+			  <li><a href="#">Avaleht</a></li>
+			  <li><a href="#">OOP</a></li>
+			  <li>
+				<a href="#">Veebidisain</a>
+				<ul class="nav-dropdown">
+				  <li><a href="#">Veebidisainist</a></li>
+				  <li><a href="#">Veebiarendus</a></li>
+				  <li><a href="#">Graafiline disain</a></li>
+				</ul>
+			  </li>
+			  <li><a href="#">JavaSript</a></li>
+			  <li><a href="#">JQuery</a></li>
+			</ul>
+		</nav>
+	</div>
+</section>
+	</header>
+		<main>
+			<div class="bg">
+				<div class="youtube">
+					<iframe id="video" src="https://www.youtube.com/embed/NtS6Vs4Tx-A?mute=1&playlist=NtS6Vs4Tx-A&loop=1" frameborder="0" width="420" height="315"></iframe>
+				</div>
+				<div class="form-container">
+					<form action="" class="main-form" id="survey-form">
+							<div class="personal-container">    
+								<div>
+									<label for="nimi" id="name-label">Nimi</label><br>
+									<input type="text" id="nimi" name="nimi" placeholder="Sisestage nimi" pattern="[A-ZÜÕÖÄa-züõöä ]{2,}(-[A-ZÜÕÖÄa-züõöä]{2,}){0,1}" required><br>
+								</div>
+								<div>
+									<label for="email" id="email-label">Email</label><br>
+									<input type="email" id="email" name="email" placeholder="Sisestage email" required><br>
+								</div>
+								<div>
+									<label for="vanus" id="vanus">Vanus (valikuline)</label><br>
+									<input type="number" min="1" max="100" id="number" name="vanus" placeholder="Vanus"><br>
+								</div>
+							</div>
+						<div class="dropdown-container">
+							<label for="dropdown">Valige sobiv vastus<label><br>
+							<select name="valik" id="valik" required>
+								<option disabled value="" selected>Valige sobiv vastus</option>
+								<option value="opilanekaug">Õpilane kaugõppes</option>
+								<option value="opilanepaeva">Õpilane päevaõppes</option>
+								<option value="eiopi">Ei õpi/kuid töötan</option>
+								<option value="mittekumbagi">Mitte kumbagi</option>
+								<option value="eivasta">Soovin mitte vastata</option>
+							</select><br>
+						</div>
+						<div class="recommendation-container"> 
+							<label for="rahulolu">Kas oled rahul Mainoriga</label><br>
+							<input type="radio" id="olenrahul" name="rahulolu" value="olenrahul">
+							<label for="olenrahul">Olen Rahul</label><br>
+							<input type="radio" id="mittetaiesti" name="rahulolu" value="mittetaiesti">
+							<label for="maybe">Mitte täiesti rahul</label><br>
+							<input type="radio" id="eiole" name="rahulolu" value="eiolerahul">
+							<label for="eiolerahul">Ei ole rahul</label><br>
+						</div>
+						<div class="checkbox-container"> 
+							<div class="checkbox-label">
+								<label for="checkboxes">Mis õppeaine meeldis enim või millised?<br>(Võib valida mitu)</label><br>
+							</div>
+								<input type="checkbox" id="html" name="valikud" value="HTML5">
+								<label for="html">HTML5</label><br>
+
+								<input type="checkbox" id="veebitehnoloogia" name="valikud" value="veebitehnoloogia">
+								<label for="veebitehnoloogia">Veebitehnoloogia</label><br>
+
+								<input type="checkbox" id="progalused" name="valikud" value="Programeerimis_alused">
+								<label for="Progalused">Programmeerimise alused</label><br>
+
+								<input type="checkbox" id="progOOP" name="valikud" value="Prog_OOP">
+								<label for="ProgOOP">Programmeerimine OOP</label><br>
+
+								<input type="checkbox" id="AA" name="valikud" value="Arvutiehitus_ja_arvutivorgud">
+								<label for="AA">Arvutiehitus ja arvutivõrgud</label><br>
+
+								<input type="checkbox" id="vektor" name="valikud" value="vektor">
+								<label for="vektor">Vektorgraafika</label><br>
+
+								<input type="checkbox" id="foto" name="valikud" value="fototootlus">
+								<label for="foto">fototöötlus</label><br>
+
+								<input type="checkbox" id="uxui" name="valikud" value="UX/UI">
+								<label for="uxui">UX/UI</label><br>
+
+								<input type="checkbox" id="proto" name="valikud" value="prototuupimine">
+								<label for="prototuupimine">Prototüüpimine</label><br>
+
+								<input type="checkbox" id="testimine" name="valikud" value="testimine">
+								<label for="testimine">Testimine</label><br>
+
+								<input type="checkbox" id="IT" name="valikud" value="IT_infrastruktuur">
+								<label for="IT">IT infrastruktuuride kavandamine</label><br>
+						</div>
+							<div class="comments-container">
+								<label for="comments">Soovid midagi täiendada?</label><br>
+								<textarea name="comments" id="comments" cols="30" rows="10" placeholder="Lisa oma kommentaar siia..." pattern="[a-zA-ZüõöäÜÕÖÄ]{0,}"></textarea>
+							</div>
+						<div class="submit-container">
+							<input type="submit" id="submit" onclick="return test()">
+						</div>
+					</form>
+				</div>
+			</div>
+			<div id="slider">
+				<a href="#" class="control_next">></a>
+				<a href="#" class="control_prev"><</a>
+				<ul>
+				  <li style="background: rgb(17, 17, 17);"><img src="css/html.png" alt="html5 logo"></li>
+				  <li style="background: rgb(13, 224, 41);"><img src="css/javascript.jpg" alt="javascripti pilt"></li>
+				  <li style="background: rgb(224, 13, 178);" ><img src="css/jquery.png" alt="jquery logo"></li>
+				  <li style="background: rgb(55, 160, 163);"><img src="css/bootstrap.jpg" alt="bootsrapi logo"></li>
+				</ul>  
+			  </div>
+			  
+			  <div class="slider_option">
+				<input type="checkbox" id="checkbox">
+				<label for="checkbox">Automaatne esitus</label>
+			</div> 
+			  
+		</main>
+		<footer><p>&copy Tallinn 2020</p></footer>
+</body>
+</html>
+
+
+
+<!-- onclick="alert('Thank you for your feedback')"--> 

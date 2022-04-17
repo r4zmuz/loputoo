@@ -1,0 +1,232 @@
+body {
+    font-size: 1.3rem;
+    font-family: 'Montserrat', sans-serif;
+    background-image: url("background_image.jpg");
+    /*background-color: black;*/
+    color: white;
+    margin: 0;
+}
+
+header {
+    text-align: center;
+}
+
+
+.bg {
+    
+    width: 100vw;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+    
+
+.form-container {
+    background-color: rgba(7, 45, 54, 0.7);
+    border-radius: 5px;
+    padding: 1em ;
+    max-width: 500px;
+    margin: auto;
+    margin-top: 4em;	
+}
+
+div {
+   margin: 1.5em 0;
+}
+
+.personal-container {
+    margin: 0 1em;
+    padding-right: 5px;
+    line-height: 1.5;
+}
+.personal-container input {
+    border-radius: 5px;
+    width: 100%;
+    height: 3em;
+    margin-top: .5em;
+}
+
+.dropdown-container {
+    margin: 0 1em;
+    line-height: 1.5;
+}
+
+.dropdown-container select {
+    width: 100%;
+    height: 2.5em;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    margin-top: .5em;
+}
+
+.recommendation-container {
+    margin: 1.5em 1em ;
+    line-height: 1.5;
+}
+
+.recommendation-container input {
+    transform: scale(1.5);
+}
+
+.checkbox-container {
+    margin: 0 1em ;
+}
+
+.checkbox-container .label-text {
+    margin-bottom: .1em;
+}
+
+.checkbox-container .checkbox-label {
+    margin-bottom: .5em;
+    line-height: 1.5;
+}
+
+.checkbox-container input {
+    transform: scale(1.5);
+    margin: .7em 0;
+}
+
+.comments-container {
+    margin: 1.5em 1em;
+}
+
+.comments-container textarea {
+    margin: 1.5em 0;
+    width: 100%;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    border: solid;
+    border-color: grey;
+}
+
+.submit-container {
+    /*margin: 0 1em 2em 1em;*/
+    margin:-0.3em  auto 1.5em auto;
+    width: 150px;
+
+}
+#submit {
+    width: 100%;
+    height: 3em;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+#submit:hover {
+    background-color:rgb(0, 195, 255);
+    cursor: pointer;
+}
+::placeholder {
+    font-size: 1.3rem;
+    
+}
+
+#comments {
+    margin-top: .5em;
+    padding-top: .3em
+}
+footer {
+    background:#08afcc28;
+    height: 70px;
+    text-align: center;
+}
+footer p {
+    margin-top: 2.5em;
+    padding-top: 1.3em;
+    font-size: 18px;
+}
+/*slaidi wrap konteineri kujundamine*/
+#slider {
+    position: relative; /*kasutame seda et saaks kasutada animation() funktsiooni*/
+    overflow: hidden;
+    margin: 3em auto 0 auto;
+    border-radius: 4px;
+  }
+  
+  #slider ul { 
+    position: relative; /*kasutame seda et saaks kasutada animation() funktsiooni*/
+    margin: 0;
+    padding: 0;
+    height: 200px;
+    list-style: none;
+  }
+  /*list elemendi kujundamine ehk slaidiplokk ise*/
+  #slider ul li {
+    position: relative; /*kasutame seda et saaks kasutada animation() funktsiooni*/
+    display: block;
+    float: left;
+    margin: 0;
+    padding: 0;
+    width: 500px;
+    height: 300px;
+    text-align: center;
+    line-height: 300px;
+  }
+/*piltide suurus*/
+  #slider ul li img {
+      height: 300px;
+      width: 500px;
+  }
+  /*kujundab noolekesed slideshow peal*/
+  a.control_prev, a.control_next {
+    position: absolute;
+    top: 40%;
+    z-index: 1;
+    display: block;
+    padding: 4% 3%;
+    width: auto;
+    height: auto;
+    background: #2a2a2a;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 18px;
+    opacity: 0.8;
+    cursor: pointer;
+  }
+
+  a.control_prev:hover, a.control_next:hover {
+    opacity: 1;
+    transition: all 0.2s ease;
+  }
+  
+  a.control_prev {
+    border-radius: 0 2px 2px 0;
+  }
+  
+  a.control_next {
+    right: 0;
+    border-radius: 2px 0 0 2px;
+  }
+  
+  /*autoplay linnukese kasti kujundamine*/
+  .slider_option {
+    position: relative;
+    margin: 10px auto;
+    width: 215px;
+    font-size: 18px;
+  }
+
+
+@media (min-width: 1130px) {
+
+   .bg { 
+       flex-direction: row;
+       margin: auto;
+       max-width: 1730px;
+    }
+
+    .form-container {
+        margin-top: 1.5em;
+    }
+    .youtube {
+        align-self: flex-start;
+        flex-basis: 820px;
+        text-align: center;
+    }
+    #video {
+        width: 520px;
+        height: 415px;
+    }
+}
